@@ -1,0 +1,468 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		97BC240D22743C6500024FDE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 97BC240C22743C6500024FDE /* AppDelegate.m */; };
+		97BC241022743C6500024FDE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97BC240F22743C6500024FDE /* ViewController.m */; };
+		97BC241322743C6500024FDE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97BC241122743C6500024FDE /* Main.storyboard */; };
+		97BC241522743C6700024FDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97BC241422743C6700024FDE /* Assets.xcassets */; };
+		97BC241822743C6700024FDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97BC241622743C6700024FDE /* LaunchScreen.storyboard */; };
+		97BC241B22743C6700024FDE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 97BC241A22743C6700024FDE /* main.m */; };
+		97BC242322743C9100024FDE /* SRMessagesCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 97BC242222743C9100024FDE /* SRMessagesCollectionViewFlowLayout.m */; };
+		97BC242622743E8500024FDE /* SRMessagesCollectionViewLayoutAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 97BC242522743E8500024FDE /* SRMessagesCollectionViewLayoutAttributes.m */; };
+		97BC2429227481E400024FDE /* SRAvatarPosition.m in Sources */ = {isa = PBXBuildFile; fileRef = 97BC2428227481E400024FDE /* SRAvatarPosition.m */; };
+		97BC242C2274855E00024FDE /* SRLabelAlignment.m in Sources */ = {isa = PBXBuildFile; fileRef = 97BC242B2274855E00024FDE /* SRLabelAlignment.m */; };
+		97BC242F227487D200024FDE /* SRHorizontalEdgeInsets.m in Sources */ = {isa = PBXBuildFile; fileRef = 97BC242E227487D200024FDE /* SRHorizontalEdgeInsets.m */; };
+		97BC24322274B08100024FDE /* SRCellSizeCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 97BC24312274B08100024FDE /* SRCellSizeCalculator.m */; };
+		97BC24352274B3F400024FDE /* SRMessageSizeCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 97BC24342274B3F400024FDE /* SRMessageSizeCalculator.m */; };
+		97BC243D2274BA0C00024FDE /* SRMessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97BC243C2274BA0C00024FDE /* SRMessagesViewController.m */; };
+		97BC24402274BA3800024FDE /* SRMessagesViewController+Keyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 97BC243F2274BA3800024FDE /* SRMessagesViewController+Keyboard.m */; };
+		97BC24432274BA4800024FDE /* SRMessagesViewController+Menu.m in Sources */ = {isa = PBXBuildFile; fileRef = 97BC24422274BA4800024FDE /* SRMessagesViewController+Menu.m */; };
+		97BC24462274BA7200024FDE /* NSBundle+SRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 97BC24452274BA7200024FDE /* NSBundle+SRExtensions.m */; };
+		97BC24492274BA8E00024FDE /* NSAttributedString+SRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 97BC24482274BA8E00024FDE /* NSAttributedString+SRExtensions.m */; };
+		97BC244C2274BAA900024FDE /* UIColor+SRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 97BC244B2274BAA900024FDE /* UIColor+SRExtensions.m */; };
+		97BC244F2274BAC400024FDE /* UIView+SRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 97BC244E2274BAC400024FDE /* UIView+SRExtensions.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		97BC240822743C6500024FDE /* SRMessageKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SRMessageKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		97BC240B22743C6500024FDE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		97BC240C22743C6500024FDE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		97BC240E22743C6500024FDE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		97BC240F22743C6500024FDE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		97BC241222743C6500024FDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		97BC241422743C6700024FDE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		97BC241722743C6700024FDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		97BC241922743C6700024FDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		97BC241A22743C6700024FDE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		97BC242122743C9100024FDE /* SRMessagesCollectionViewFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRMessagesCollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		97BC242222743C9100024FDE /* SRMessagesCollectionViewFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SRMessagesCollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		97BC242422743E8500024FDE /* SRMessagesCollectionViewLayoutAttributes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRMessagesCollectionViewLayoutAttributes.h; sourceTree = "<group>"; };
+		97BC242522743E8500024FDE /* SRMessagesCollectionViewLayoutAttributes.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SRMessagesCollectionViewLayoutAttributes.m; sourceTree = "<group>"; };
+		97BC2427227481E400024FDE /* SRAvatarPosition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRAvatarPosition.h; sourceTree = "<group>"; };
+		97BC2428227481E400024FDE /* SRAvatarPosition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SRAvatarPosition.m; sourceTree = "<group>"; };
+		97BC242A2274855E00024FDE /* SRLabelAlignment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRLabelAlignment.h; sourceTree = "<group>"; };
+		97BC242B2274855E00024FDE /* SRLabelAlignment.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SRLabelAlignment.m; sourceTree = "<group>"; };
+		97BC242D227487D200024FDE /* SRHorizontalEdgeInsets.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRHorizontalEdgeInsets.h; sourceTree = "<group>"; };
+		97BC242E227487D200024FDE /* SRHorizontalEdgeInsets.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SRHorizontalEdgeInsets.m; sourceTree = "<group>"; };
+		97BC24302274B08100024FDE /* SRCellSizeCalculator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRCellSizeCalculator.h; sourceTree = "<group>"; };
+		97BC24312274B08100024FDE /* SRCellSizeCalculator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SRCellSizeCalculator.m; sourceTree = "<group>"; };
+		97BC24332274B3F400024FDE /* SRMessageSizeCalculator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRMessageSizeCalculator.h; sourceTree = "<group>"; };
+		97BC24342274B3F400024FDE /* SRMessageSizeCalculator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SRMessageSizeCalculator.m; sourceTree = "<group>"; };
+		97BC243B2274BA0C00024FDE /* SRMessagesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRMessagesViewController.h; sourceTree = "<group>"; };
+		97BC243C2274BA0C00024FDE /* SRMessagesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SRMessagesViewController.m; sourceTree = "<group>"; };
+		97BC243E2274BA3800024FDE /* SRMessagesViewController+Keyboard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SRMessagesViewController+Keyboard.h"; sourceTree = "<group>"; };
+		97BC243F2274BA3800024FDE /* SRMessagesViewController+Keyboard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SRMessagesViewController+Keyboard.m"; sourceTree = "<group>"; };
+		97BC24412274BA4800024FDE /* SRMessagesViewController+Menu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SRMessagesViewController+Menu.h"; sourceTree = "<group>"; };
+		97BC24422274BA4800024FDE /* SRMessagesViewController+Menu.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SRMessagesViewController+Menu.m"; sourceTree = "<group>"; };
+		97BC24442274BA7200024FDE /* NSBundle+SRExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSBundle+SRExtensions.h"; sourceTree = "<group>"; };
+		97BC24452274BA7200024FDE /* NSBundle+SRExtensions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+SRExtensions.m"; sourceTree = "<group>"; };
+		97BC24472274BA8E00024FDE /* NSAttributedString+SRExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+SRExtensions.h"; sourceTree = "<group>"; };
+		97BC24482274BA8E00024FDE /* NSAttributedString+SRExtensions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+SRExtensions.m"; sourceTree = "<group>"; };
+		97BC244A2274BAA900024FDE /* UIColor+SRExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+SRExtensions.h"; sourceTree = "<group>"; };
+		97BC244B2274BAA900024FDE /* UIColor+SRExtensions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+SRExtensions.m"; sourceTree = "<group>"; };
+		97BC244D2274BAC400024FDE /* UIView+SRExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+SRExtensions.h"; sourceTree = "<group>"; };
+		97BC244E2274BAC400024FDE /* UIView+SRExtensions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+SRExtensions.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		97BC240522743C6500024FDE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		97BC23FF22743C6500024FDE = {
+			isa = PBXGroup;
+			children = (
+				97BC240A22743C6500024FDE /* SRMessageKit */,
+				97BC240922743C6500024FDE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		97BC240922743C6500024FDE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				97BC240822743C6500024FDE /* SRMessageKit.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		97BC240A22743C6500024FDE /* SRMessageKit */ = {
+			isa = PBXGroup;
+			children = (
+				97BC24392274B99A00024FDE /* Controllers */,
+				97BC24382274B99200024FDE /* Extensions */,
+				97BC24362274B90900024FDE /* Layout */,
+				97BC24372274B93500024FDE /* Models */,
+				97BC243A2274B9B000024FDE /* Protocols */,
+				97BC240B22743C6500024FDE /* AppDelegate.h */,
+				97BC240C22743C6500024FDE /* AppDelegate.m */,
+				97BC240E22743C6500024FDE /* ViewController.h */,
+				97BC240F22743C6500024FDE /* ViewController.m */,
+				97BC241122743C6500024FDE /* Main.storyboard */,
+				97BC241422743C6700024FDE /* Assets.xcassets */,
+				97BC241622743C6700024FDE /* LaunchScreen.storyboard */,
+				97BC241922743C6700024FDE /* Info.plist */,
+				97BC241A22743C6700024FDE /* main.m */,
+			);
+			path = SRMessageKit;
+			sourceTree = "<group>";
+		};
+		97BC24362274B90900024FDE /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				97BC242122743C9100024FDE /* SRMessagesCollectionViewFlowLayout.h */,
+				97BC242222743C9100024FDE /* SRMessagesCollectionViewFlowLayout.m */,
+				97BC242422743E8500024FDE /* SRMessagesCollectionViewLayoutAttributes.h */,
+				97BC242522743E8500024FDE /* SRMessagesCollectionViewLayoutAttributes.m */,
+				97BC24302274B08100024FDE /* SRCellSizeCalculator.h */,
+				97BC24312274B08100024FDE /* SRCellSizeCalculator.m */,
+				97BC24332274B3F400024FDE /* SRMessageSizeCalculator.h */,
+				97BC24342274B3F400024FDE /* SRMessageSizeCalculator.m */,
+			);
+			path = Layout;
+			sourceTree = "<group>";
+		};
+		97BC24372274B93500024FDE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				97BC2427227481E400024FDE /* SRAvatarPosition.h */,
+				97BC2428227481E400024FDE /* SRAvatarPosition.m */,
+				97BC242A2274855E00024FDE /* SRLabelAlignment.h */,
+				97BC242B2274855E00024FDE /* SRLabelAlignment.m */,
+				97BC242D227487D200024FDE /* SRHorizontalEdgeInsets.h */,
+				97BC242E227487D200024FDE /* SRHorizontalEdgeInsets.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		97BC24382274B99200024FDE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				97BC24442274BA7200024FDE /* NSBundle+SRExtensions.h */,
+				97BC24452274BA7200024FDE /* NSBundle+SRExtensions.m */,
+				97BC24472274BA8E00024FDE /* NSAttributedString+SRExtensions.h */,
+				97BC24482274BA8E00024FDE /* NSAttributedString+SRExtensions.m */,
+				97BC244A2274BAA900024FDE /* UIColor+SRExtensions.h */,
+				97BC244B2274BAA900024FDE /* UIColor+SRExtensions.m */,
+				97BC244D2274BAC400024FDE /* UIView+SRExtensions.h */,
+				97BC244E2274BAC400024FDE /* UIView+SRExtensions.m */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		97BC24392274B99A00024FDE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				97BC243B2274BA0C00024FDE /* SRMessagesViewController.h */,
+				97BC243C2274BA0C00024FDE /* SRMessagesViewController.m */,
+				97BC243E2274BA3800024FDE /* SRMessagesViewController+Keyboard.h */,
+				97BC243F2274BA3800024FDE /* SRMessagesViewController+Keyboard.m */,
+				97BC24412274BA4800024FDE /* SRMessagesViewController+Menu.h */,
+				97BC24422274BA4800024FDE /* SRMessagesViewController+Menu.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		97BC243A2274B9B000024FDE /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		97BC240722743C6500024FDE /* SRMessageKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 97BC241E22743C6700024FDE /* Build configuration list for PBXNativeTarget "SRMessageKit" */;
+			buildPhases = (
+				97BC240422743C6500024FDE /* Sources */,
+				97BC240522743C6500024FDE /* Frameworks */,
+				97BC240622743C6500024FDE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SRMessageKit;
+			productName = SRMessageKit;
+			productReference = 97BC240822743C6500024FDE /* SRMessageKit.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		97BC240022743C6500024FDE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = zhangyangwei.com;
+				TargetAttributes = {
+					97BC240722743C6500024FDE = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 97BC240322743C6500024FDE /* Build configuration list for PBXProject "SRMessageKit" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 97BC23FF22743C6500024FDE;
+			productRefGroup = 97BC240922743C6500024FDE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				97BC240722743C6500024FDE /* SRMessageKit */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		97BC240622743C6500024FDE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97BC241822743C6700024FDE /* LaunchScreen.storyboard in Resources */,
+				97BC241522743C6700024FDE /* Assets.xcassets in Resources */,
+				97BC241322743C6500024FDE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		97BC240422743C6500024FDE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97BC241022743C6500024FDE /* ViewController.m in Sources */,
+				97BC24322274B08100024FDE /* SRCellSizeCalculator.m in Sources */,
+				97BC242C2274855E00024FDE /* SRLabelAlignment.m in Sources */,
+				97BC24352274B3F400024FDE /* SRMessageSizeCalculator.m in Sources */,
+				97BC243D2274BA0C00024FDE /* SRMessagesViewController.m in Sources */,
+				97BC242322743C9100024FDE /* SRMessagesCollectionViewFlowLayout.m in Sources */,
+				97BC24492274BA8E00024FDE /* NSAttributedString+SRExtensions.m in Sources */,
+				97BC24432274BA4800024FDE /* SRMessagesViewController+Menu.m in Sources */,
+				97BC24462274BA7200024FDE /* NSBundle+SRExtensions.m in Sources */,
+				97BC24402274BA3800024FDE /* SRMessagesViewController+Keyboard.m in Sources */,
+				97BC241B22743C6700024FDE /* main.m in Sources */,
+				97BC242622743E8500024FDE /* SRMessagesCollectionViewLayoutAttributes.m in Sources */,
+				97BC242F227487D200024FDE /* SRHorizontalEdgeInsets.m in Sources */,
+				97BC2429227481E400024FDE /* SRAvatarPosition.m in Sources */,
+				97BC244C2274BAA900024FDE /* UIColor+SRExtensions.m in Sources */,
+				97BC240D22743C6500024FDE /* AppDelegate.m in Sources */,
+				97BC244F2274BAC400024FDE /* UIView+SRExtensions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		97BC241122743C6500024FDE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				97BC241222743C6500024FDE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		97BC241622743C6700024FDE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				97BC241722743C6700024FDE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		97BC241C22743C6700024FDE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		97BC241D22743C6700024FDE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		97BC241F22743C6700024FDE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VN2D9WHJ93;
+				INFOPLIST_FILE = SRMessageKit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zyvv.SRMessageKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		97BC242022743C6700024FDE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VN2D9WHJ93;
+				INFOPLIST_FILE = SRMessageKit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zyvv.SRMessageKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		97BC240322743C6500024FDE /* Build configuration list for PBXProject "SRMessageKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				97BC241C22743C6700024FDE /* Debug */,
+				97BC241D22743C6700024FDE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		97BC241E22743C6700024FDE /* Build configuration list for PBXNativeTarget "SRMessageKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				97BC241F22743C6700024FDE /* Debug */,
+				97BC242022743C6700024FDE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 97BC240022743C6500024FDE /* Project object */;
+}
