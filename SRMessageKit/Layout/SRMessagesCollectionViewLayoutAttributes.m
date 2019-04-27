@@ -74,7 +74,21 @@
 }
 
 - (BOOL)isEqual:(SRMessagesCollectionViewLayoutAttributes *)object {
-    return [super isEqual:object] && object.avatarSize.width == _avatarSize.width && object.avatarSize.height == _avatarSize.height && object.avatarPosition == _avatarPosition && object.messageContainerSize.width == _messageContainerSize.width && object.messageContainerSize.height == _messageContainerSize.height && object.messageContainerPadding.top == _messageContainerPadding.top && object.messageContainerPadding.left == _messageContainerPadding.left && object.messageContainerPadding.bottom == _messageContainerPadding.bottom && object.messageContainerPadding.right == _messageContainerPadding.right && object.messageLabelFont == _messageLabelFont && object.messageLabelInsets.top == _messageLabelInsets.top && object.messageLabelInsets.left == _messageLabelInsets.left && object.messageLabelInsets.bottom == _messageLabelInsets.bottom == object.messageLabelInsets.right == _messageLabelInsets.right && object.cellTopLabelAlignment == _cellTopLabelAlignment && object.cellTopLabelSize.width == _cellTopLabelSize.width && object.cellTopLabelSize.height == _cellTopLabelSize.height && object.messageTopLabelAlignment == _messageTopLabelAlignment && object.messageTopLabelSize.width == _messageTopLabelSize.width && object.messageTopLabelSize.height == _messageTopLabelSize.height && object.messageBottomLabelAlignment == _messageBottomLabelAlignment && object.messageBottomLabelSize.width == _messageBottomLabelSize.width && object.messageBottomLabelSize.height == _messageBottomLabelSize.height && object.accessoryViewSize.width == _accessoryViewSize.width && object.accessoryViewSize.height == _accessoryViewSize.height &&  object.accessoryViewPadding == _accessoryViewPadding;
+    return [super isEqual:object]
+        && CGSizeEqualToSize(object.avatarSize, _avatarSize)
+        && object.avatarPosition == _avatarPosition
+        && CGSizeEqualToSize(object.messageContainerSize, _messageContainerSize)
+        && UIEdgeInsetsEqualToEdgeInsets(object.messageContainerPadding, _messageContainerPadding)
+        && object.messageLabelFont == _messageLabelFont
+        && UIEdgeInsetsEqualToEdgeInsets(object.messageLabelInsets, _messageLabelInsets)
+        && object.cellTopLabelAlignment == _cellTopLabelAlignment
+        && CGSizeEqualToSize(object.cellTopLabelSize, _cellTopLabelSize)
+        && object.messageTopLabelAlignment == _messageTopLabelAlignment
+        && CGSizeEqualToSize(object.messageTopLabelSize, _messageTopLabelSize)
+        && object.messageBottomLabelAlignment == _messageBottomLabelAlignment
+        && CGSizeEqualToSize(object.messageBottomLabelSize, _messageBottomLabelSize)
+        && CGSizeEqualToSize(object.accessoryViewSize, _accessoryViewSize)
+        && object.accessoryViewPadding == _accessoryViewPadding;
 }
 
 @end

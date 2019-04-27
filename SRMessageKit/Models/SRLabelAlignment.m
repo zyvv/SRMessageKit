@@ -21,7 +21,8 @@
 }
 
 - (BOOL)isEqual:(SRLabelAlignment *)object {
-    return self.textAlignment == object.textAlignment && self.textInsets.top == object.textInsets.top && self.textInsets.left == object.textInsets.left && self.textInsets.bottom == object.textInsets.bottom && self.textInsets.right == object.textInsets.bottom;
+    return self.textAlignment == object.textAlignment && UIEdgeInsetsEqualToEdgeInsets(self.textInsets, object.textInsets);
+   
 }
 
 @end
