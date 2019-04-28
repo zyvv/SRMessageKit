@@ -126,7 +126,38 @@
              };
 }
 
+#pragma mark - Initializers
+- (instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    if (self) {
+        [self setupView];
+    }
+    return self;
+}
+
+#pragma mark - Open Methods
+- (void)drawTextInRect:(CGRect)rect {
+    CGRect insetRect = UIEdgeInsetsInsetRect(rect, self.textInsets);
+    self.textContainer.size = CGSizeMake(CGRectGetWidth(insetRect), CGRectGetHeight(insetRect));
+    CGPoint origin = insetRect.origin;
+    NSRange range = [self.layoutManager glyphRangeForTextContainer:self.textContainer
+                     ];
+    [self.layoutManager drawBackgroundForGlyphRange:range atPoint:origin];
+    [self.layoutManager drawGlyphsForGlyphRange:range atPoint:origin];
+}
+
+#pragma mark - Public Methods
+- (void)configure:(void(^)())block {
+    self.isConfiguring = YES;
+    block();
+}
+
 #pragma mark - Private Methods
+- (void)setupView {
+    self.numberOfLines = 0;
+    self.lineBreakMode = NSLineBreakByWordWrapping;
+}
+
 - (void)setTextStorage:(NSAttributedString *)newText shouldParse:(BOOL)shouldParse {
     if (!newText || newText.length == 0) {
         [self.textStorage setAttributedString:[[NSAttributedString alloc] init]];
