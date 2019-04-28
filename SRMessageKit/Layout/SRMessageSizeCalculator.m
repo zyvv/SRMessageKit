@@ -8,6 +8,7 @@
 
 #import "SRMessageSizeCalculator.h"
 #import "SRMessagesCollectionViewLayoutAttributes.h"
+#import "SRMessageType.h"
 
 @implementation SRMessageSizeCalculator
 
@@ -19,8 +20,17 @@
 //    let dataSource = messagesLayout.messagesDataSource;
     NSIndexPath *indexPath = messageAttributes.indexPath;
 //    let message = dataSource.messageForItem(at: indexPath, in: messagesLayout.messagesCollectionView)
-    messageAttributes.avatarSize = 
+    messageAttributes.avatarSize = [self avatarSizeForMessage:<#(SRMessageType *)#>]
     
+}
+
+#pragma mark - Avatar
+- (SRAvatarPosition *)avatarPositionForMessage:(SRMessageType *)message {
+    return nil;
+}
+
+- (CGSize)avatarSizeForMessage:(SRMessageType *)message {
+    return CGSizeZero;
 }
 
 #pragma mark - Helpers

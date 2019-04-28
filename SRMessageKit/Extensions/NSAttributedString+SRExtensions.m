@@ -10,4 +10,10 @@
 
 @implementation NSAttributedString (SRExtensions)
 
+- (CGFloat)widthConsideringHeight:(CGFloat)height {
+    CGSize constraintBox = CGSizeMake(CGFLOAT_MAX, height);
+    CGRect rect = [self boundingRectWithSize:constraintBox options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading context:nil];
+    return rect.size.width;
+}
+
 @end

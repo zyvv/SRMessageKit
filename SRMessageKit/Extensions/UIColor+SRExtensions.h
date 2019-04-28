@@ -12,6 +12,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIColor (SRExtensions)
 
++ (UIColor *)incomingGray;
+
++ (UIColor *)outgoingGreen;
+
++ (UIColor *)inputBarGray;
+
++ (UIColor *)playButtonLightGray;
+
++ (UIColor *)sendButtonBlue;
+
 @end
 
 NS_ASSUME_NONNULL_END
