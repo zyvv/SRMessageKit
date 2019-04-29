@@ -7,10 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SRMessagesCollectionView.h"
+#import "SRMessageInputBar.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SRMessagesViewController : UIViewController
+
+@property (nonatomic, strong) SRMessagesCollectionView *messagesCollectionView;
+
+@property (nonatomic, strong) SRMessageInputBar *messageInputBar;
+
+@property (nonatomic, assign) BOOL scrollsToBottomOnKeyboardBeginsEditing;
+
+@property (nonatomic, assign) BOOL maintainPositionOnKeyboardFrameChanged;
 
 @end
 

@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class SRMessageInputBar;
 @protocol SRMessageInputBarDelegate <NSObject>
-
+@optional
 - (void)messageInputBar:(SRMessageInputBar *)inputBar didPressSendButtonWithText:(NSString *)text;
 
 - (void)messageInputBar:(SRMessageInputBar *)inputBar didChangeIntrinsicContentToSize:(CGSize )size;
