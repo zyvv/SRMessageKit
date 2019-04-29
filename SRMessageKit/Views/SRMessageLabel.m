@@ -8,6 +8,7 @@
 
 #import "SRMessageLabel.h"
 #import "NSArray+SRExtensions.h"
+#import "SRDetectorType.h"
 
 @interface SRMessageLabel ()
 
@@ -16,8 +17,13 @@
 @property (nonatomic, strong) NSTextStorage *textStorage;
 @property (nonatomic, strong) NSMutableDictionary *rangesForDetectors;
 @property (nonatomic, assign) BOOL isConfiguring;
-@property (nonatomic, strong) UIFont *messageLabelFont;
 @property (nonatomic, assign) BOOL attributesNeedUpdate;
+
+@property (nonatomic, strong) NSDictionary *addressAttributes;
+@property (nonatomic, strong) NSDictionary *dateAttributes;
+@property (nonatomic, strong) NSDictionary *phoneNumberAttributes;
+@property (nonatomic, strong) NSDictionary *urlAttributes;
+@property (nonatomic, strong) NSDictionary *transitInformationAttributes;
 
 @end
 
@@ -131,6 +137,11 @@
     self = [super initWithFrame:frame];
     if (self) {
         [self setupView];
+        self.addressAttributes = [SRMessageLabel defaultAttributes];
+        self.dateAttributes = [SRMessageLabel defaultAttributes];
+        self.phoneNumberAttributes = [SRMessageLabel defaultAttributes];
+        self.urlAttributes = [SRMessageLabel defaultAttributes];
+        self.transitInformationAttributes = [SRMessageLabel defaultAttributes];
     }
     return self;
 }
@@ -147,15 +158,48 @@
 }
 
 #pragma mark - Public Methods
-- (void)configure:(void(^)())block {
+- (void)configure:(void(^)(void))block {
     self.isConfiguring = YES;
     block();
+    if (self.attributesNeedUpdate) {
+        [self updateAttributesForDetectors:self.enabledDetectors];
+    }
+    self.attributesNeedUpdate = NO;
+    self.isConfiguring = NO;
+    [self setNeedsDisplay];
 }
 
 #pragma mark - Private Methods
 - (void)setupView {
     self.numberOfLines = 0;
     self.lineBreakMode = NSLineBreakByWordWrapping;
+}
+
+- (void)updateAttributesForDetectors:(NSArray *)detectors {
+    
+}
+
+- (NSDictionary *)detectorAttributesForDetectoreType:(SRDetectorType)detectoreType {
+    switch (detectoreType) {
+        case SRDetectorTypeAddress:
+            return self.addressAttributes;
+            break;
+        case SRDetectorTypeDate:
+            return self.dateAttributes;
+            break;
+        case SRDetectorTypePhoneNumber:
+            return self.phoneNumberAttributes;
+            break;
+        case SRDetectorTypeUrl:
+            return self.urlAttributes;
+            break;
+        case SRDetectorTypeTransitInformation:
+            return self.transitInformationAttributes;
+            break;
+            
+        default:
+            break;
+    }
 }
 
 - (void)setTextStorage:(NSAttributedString *)newText shouldParse:(BOOL)shouldParse {
@@ -172,6 +216,20 @@
     
     if (shouldParse) {
         [self.rangesForDetectors removeAllObjects];
+        NSArray *results = [self parseText:mutableText];
+        [self setRnagesForDetectorsInCheckingResults:results];
+    }
+    
+    for (NSNumber *key in self.rangesForDetectors) {
+        [self.enabledDetectors containsObject:key];
+        [self detectorAttributesForDetectoreType:[key integerValue]];
+        
+    }
+    
+    NSAttributedString *modifiedText = [[NSAttributedString alloc] initWithAttributedString:mutableText];
+    [self.textStorage setAttributedString:modifiedText];
+    if (!self.isConfiguring) {
+        [self setNeedsDisplay];
     }
 }
 

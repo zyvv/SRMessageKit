@@ -9,9 +9,42 @@
 #import "SRMessagesCollectionViewFlowLayout.h"
 #import "SRMessagesCollectionViewLayoutAttributes.h"
 #import "SRCellSizeCalculator.h"
+#import "SRTextMessageSizeCalculator.h"
+#import "SRMediaMessageSizeCalculator.h"
 
 @implementation SRMessagesCollectionViewFlowLayout
 
+- (SRMessagesCollectionView *)messagesCollectionView {
+    return (SRMessagesCollectionView *)self.collectionView;
+}
+
+- (id<SRMessagesDataSource>)messagesDataSource  {
+    return self.messagesCollectionView.messageDataSource;
+}
+
+- (id<SRMessagesLayoutDelegate>)messagesLayoutDelegate {
+    return self.messagesCollectionView.messageLayoutDelegate;
+}
+
+- (CGFloat)itemWidth {
+    return self.collectionView.frame.size.width - self.sectionInset.left - self.sectionInset.right;
+}
+
+#pragma mark - Initializers
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        [self setupView];
+        [self setupObserver];
+    }
+    return self;
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+#pragma mark - Methods
 - (void)setupView {
     self.sectionInset = UIEdgeInsetsMake(4, 8, 4, 8);
 }
@@ -61,6 +94,28 @@
 }
 
 #pragma mark - Cell Sizing
+
+- (SRTextMessageSizeCalculator *)textMessageSizeCalculator {
+    if (!_textMessageSizeCalculator) {
+        _textMessageSizeCalculator = [[SRTextMessageSizeCalculator alloc] initWithLayout:self];
+    }
+    return _textMessageSizeCalculator;
+}
+
+- (SRTextMessageSizeCalculator *)attributedTextMessageSizeCalculator {
+    if (!_attributedTextMessageSizeCalculator) {
+        _attributedTextMessageSizeCalculator = [[SRTextMessageSizeCalculator alloc] initWithLayout:self];
+    }
+    return _attributedTextMessageSizeCalculator;
+}
+
+- (SRTextMessageSizeCalculator *)emojiMessageSizeCalculator {
+    if (!_emojiMessageSizeCalculator) {
+        _emojiMessageSizeCalculator = [[SRTextMessageSizeCalculator alloc] initWithLayout:self];
+        _emojiMessageSizeCalculator.messageLabelFont = [UIFont systemFontOfSize:_emojiMessageSizeCalculator.messageLabelFont.pointSize * 2];
+    }
+    return _emojiMessageSizeCalculator;
+}
 
 - (SRCellSizeCalculator *)cellSizeCalculatorForItemAtIndexPath:(NSIndexPath *)indexPath {
     return nil;

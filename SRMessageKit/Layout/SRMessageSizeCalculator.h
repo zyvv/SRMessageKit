@@ -7,12 +7,14 @@
 //
 
 #import "SRCellSizeCalculator.h"
-#import "SRMessagesCollectionViewFlowLayout.h"
 #import "SRAvatarPosition.h"
 #import "SRLabelAlignment.h"
 #import "SRHorizontalEdgeInsets.h"
 
 NS_ASSUME_NONNULL_BEGIN
+
+@class SRMessagesCollectionViewFlowLayout;
+@class SRMessageType;
 
 @interface SRMessageSizeCalculator : SRCellSizeCalculator
 
@@ -43,6 +45,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) SRHorizontalEdgeInsets *outgoingAccessoryViewPadding;
 
 @property (nonatomic, strong, readonly) SRMessagesCollectionViewFlowLayout *messageLayout;
+
+- (CGSize)messageContainerSizeForMessage:(SRMessageType *)message;
+
+- (CGFloat)messageContainerMaxWidthForMessage:(SRMessageType *)message;
+
+- (CGSize)labelSizeForAttributedText:(NSAttributedString *)attributedText consideringMaxWidth:(CGFloat)maxWidth;
 
 @end
 

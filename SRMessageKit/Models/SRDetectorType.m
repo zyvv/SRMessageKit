@@ -8,6 +8,28 @@
 
 #import "SRDetectorType.h"
 
+NSTextCheckingType textCheckingType(SRDetectorType type) {
+    switch (type) {
+        case SRDetectorTypeAddress:
+            return NSTextCheckingTypeAddress;
+            break;
+        case SRDetectorTypeDate:
+            return NSTextCheckingTypeDate;
+            break;
+        case SRDetectorTypePhoneNumber:
+            return NSTextCheckingTypePhoneNumber;
+            break;
+        case SRDetectorTypeUrl:
+            return NSTextCheckingTypeLink;
+            break;
+        case SRDetectorTypeTransitInformation:
+            return NSTextCheckingTypeTransitInformation;
+            break;
+        default:
+            break;
+    }
+}
+
 //@implementation SRDetectorType
 //
 //@end

@@ -22,6 +22,13 @@
 		7226992422758BC10047C80B /* SRMessageLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7226992322758BC10047C80B /* SRMessageLabel.m */; };
 		7226992722758D290047C80B /* SRDetectorType.m in Sources */ = {isa = PBXBuildFile; fileRef = 7226992622758D290047C80B /* SRDetectorType.m */; };
 		7226992B227595590047C80B /* NSArray+SRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7226992A227595590047C80B /* NSArray+SRExtensions.m */; };
+		7226992E22768E840047C80B /* SRMessagesCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7226992D22768E840047C80B /* SRMessagesCollectionView.m */; };
+		722699312276932F0047C80B /* SRMessageReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 722699302276932F0047C80B /* SRMessageReusableView.m */; };
+		7226993422769DD60047C80B /* SRMediaMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7226993322769DD60047C80B /* SRMediaMessageCell.m */; };
+		722699372276C8460047C80B /* SRMessageKind.m in Sources */ = {isa = PBXBuildFile; fileRef = 722699362276C8460047C80B /* SRMessageKind.m */; };
+		7226993A2276CAA10047C80B /* SRTextMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 722699392276CAA10047C80B /* SRTextMessageCell.m */; };
+		7226993D2276DC440047C80B /* SRTextMessageSizeCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7226993C2276DC440047C80B /* SRTextMessageSizeCalculator.m */; };
+		722699402276EB2E0047C80B /* SRMediaMessageSizeCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7226993F2276EB2E0047C80B /* SRMediaMessageSizeCalculator.m */; };
 		97BC240D22743C6500024FDE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 97BC240C22743C6500024FDE /* AppDelegate.m */; };
 		97BC241022743C6500024FDE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97BC240F22743C6500024FDE /* ViewController.m */; };
 		97BC241322743C6500024FDE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97BC241122743C6500024FDE /* Main.storyboard */; };
@@ -42,9 +49,11 @@
 		97BC24492274BA8E00024FDE /* NSAttributedString+SRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 97BC24482274BA8E00024FDE /* NSAttributedString+SRExtensions.m */; };
 		97BC244C2274BAA900024FDE /* UIColor+SRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 97BC244B2274BAA900024FDE /* UIColor+SRExtensions.m */; };
 		97BC244F2274BAC400024FDE /* UIView+SRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 97BC244E2274BAC400024FDE /* UIView+SRExtensions.m */; };
+		F15D6BCDFB7ABF337F21E6CC /* libPods-SRMessageKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0922B5E22ABED8FEEEDF84BF /* libPods-SRMessageKit.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0922B5E22ABED8FEEEDF84BF /* libPods-SRMessageKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SRMessageKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		722698F92275377D0047C80B /* SRMessageKitDateFormatter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRMessageKitDateFormatter.h; sourceTree = "<group>"; };
 		722698FA2275377D0047C80B /* SRMessageKitDateFormatter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SRMessageKitDateFormatter.m; sourceTree = "<group>"; };
 		722698FC22753B8C0047C80B /* SRMessageStyle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRMessageStyle.h; sourceTree = "<group>"; };
@@ -75,6 +84,21 @@
 		7226992622758D290047C80B /* SRDetectorType.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SRDetectorType.m; sourceTree = "<group>"; };
 		72269929227595590047C80B /* NSArray+SRExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+SRExtensions.h"; sourceTree = "<group>"; };
 		7226992A227595590047C80B /* NSArray+SRExtensions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+SRExtensions.m"; sourceTree = "<group>"; };
+		7226992C22768E840047C80B /* SRMessagesCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRMessagesCollectionView.h; sourceTree = "<group>"; };
+		7226992D22768E840047C80B /* SRMessagesCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SRMessagesCollectionView.m; sourceTree = "<group>"; };
+		7226992F2276932F0047C80B /* SRMessageReusableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRMessageReusableView.h; sourceTree = "<group>"; };
+		722699302276932F0047C80B /* SRMessageReusableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SRMessageReusableView.m; sourceTree = "<group>"; };
+		7226993222769DD60047C80B /* SRMediaMessageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRMediaMessageCell.h; sourceTree = "<group>"; };
+		7226993322769DD60047C80B /* SRMediaMessageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SRMediaMessageCell.m; sourceTree = "<group>"; };
+		722699352276C8460047C80B /* SRMessageKind.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRMessageKind.h; sourceTree = "<group>"; };
+		722699362276C8460047C80B /* SRMessageKind.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SRMessageKind.m; sourceTree = "<group>"; };
+		722699382276CAA10047C80B /* SRTextMessageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRTextMessageCell.h; sourceTree = "<group>"; };
+		722699392276CAA10047C80B /* SRTextMessageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SRTextMessageCell.m; sourceTree = "<group>"; };
+		7226993B2276DC440047C80B /* SRTextMessageSizeCalculator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRTextMessageSizeCalculator.h; sourceTree = "<group>"; };
+		7226993C2276DC440047C80B /* SRTextMessageSizeCalculator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SRTextMessageSizeCalculator.m; sourceTree = "<group>"; };
+		7226993E2276EB2E0047C80B /* SRMediaMessageSizeCalculator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRMediaMessageSizeCalculator.h; sourceTree = "<group>"; };
+		7226993F2276EB2E0047C80B /* SRMediaMessageSizeCalculator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SRMediaMessageSizeCalculator.m; sourceTree = "<group>"; };
+		7F79CA9C3BD58032F78C30CB /* Pods-SRMessageKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SRMessageKit.debug.xcconfig"; path = "Target Support Files/Pods-SRMessageKit/Pods-SRMessageKit.debug.xcconfig"; sourceTree = "<group>"; };
 		97BC240822743C6500024FDE /* SRMessageKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SRMessageKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97BC240B22743C6500024FDE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		97BC240C22743C6500024FDE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -113,6 +137,7 @@
 		97BC244B2274BAA900024FDE /* UIColor+SRExtensions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+SRExtensions.m"; sourceTree = "<group>"; };
 		97BC244D2274BAC400024FDE /* UIView+SRExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+SRExtensions.h"; sourceTree = "<group>"; };
 		97BC244E2274BAC400024FDE /* UIView+SRExtensions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+SRExtensions.m"; sourceTree = "<group>"; };
+		FE65E7F31ACC9A5CA95127BB /* Pods-SRMessageKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SRMessageKit.release.xcconfig"; path = "Target Support Files/Pods-SRMessageKit/Pods-SRMessageKit.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +145,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F15D6BCDFB7ABF337F21E6CC /* libPods-SRMessageKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +164,10 @@
 				7226991D2275554F0047C80B /* SRMessageContainerView.m */,
 				7226992222758BC10047C80B /* SRMessageLabel.h */,
 				7226992322758BC10047C80B /* SRMessageLabel.m */,
+				7226992C22768E840047C80B /* SRMessagesCollectionView.h */,
+				7226992D22768E840047C80B /* SRMessagesCollectionView.m */,
+				7226992F2276932F0047C80B /* SRMessageReusableView.h */,
+				722699302276932F0047C80B /* SRMessageReusableView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -149,8 +179,29 @@
 				7226990E227546CF0047C80B /* SRMessageCollectionViewCell.m */,
 				72269910227546FD0047C80B /* SRMessageContentCell.h */,
 				72269911227546FD0047C80B /* SRMessageContentCell.m */,
+				7226993222769DD60047C80B /* SRMediaMessageCell.h */,
+				7226993322769DD60047C80B /* SRMediaMessageCell.m */,
+				722699382276CAA10047C80B /* SRTextMessageCell.h */,
+				722699392276CAA10047C80B /* SRTextMessageCell.m */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		730B7690D0CF0F0E77AB33A6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7F79CA9C3BD58032F78C30CB /* Pods-SRMessageKit.debug.xcconfig */,
+				FE65E7F31ACC9A5CA95127BB /* Pods-SRMessageKit.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		89021F3CBE38DA7709D60765 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0922B5E22ABED8FEEEDF84BF /* libPods-SRMessageKit.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		97BC23FF22743C6500024FDE = {
@@ -158,6 +209,8 @@
 			children = (
 				97BC240A22743C6500024FDE /* SRMessageKit */,
 				97BC240922743C6500024FDE /* Products */,
+				730B7690D0CF0F0E77AB33A6 /* Pods */,
+				89021F3CBE38DA7709D60765 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -202,6 +255,10 @@
 				97BC24312274B08100024FDE /* SRCellSizeCalculator.m */,
 				97BC24332274B3F400024FDE /* SRMessageSizeCalculator.h */,
 				97BC24342274B3F400024FDE /* SRMessageSizeCalculator.m */,
+				7226993B2276DC440047C80B /* SRTextMessageSizeCalculator.h */,
+				7226993C2276DC440047C80B /* SRTextMessageSizeCalculator.m */,
+				7226993E2276EB2E0047C80B /* SRMediaMessageSizeCalculator.h */,
+				7226993F2276EB2E0047C80B /* SRMediaMessageSizeCalculator.m */,
 			);
 			path = Layout;
 			sourceTree = "<group>";
@@ -225,6 +282,8 @@
 				72269917227552230047C80B /* SRAvatar.m */,
 				7226992522758D290047C80B /* SRDetectorType.h */,
 				7226992622758D290047C80B /* SRDetectorType.m */,
+				722699352276C8460047C80B /* SRMessageKind.h */,
+				722699362276C8460047C80B /* SRMessageKind.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -279,6 +338,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 97BC241E22743C6700024FDE /* Build configuration list for PBXNativeTarget "SRMessageKit" */;
 			buildPhases = (
+				F72DB36D9A8DCAF4AA944420 /* [CP] Check Pods Manifest.lock */,
 				97BC240422743C6500024FDE /* Sources */,
 				97BC240522743C6500024FDE /* Frameworks */,
 				97BC240622743C6500024FDE /* Resources */,
@@ -337,6 +397,31 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		F72DB36D9A8DCAF4AA944420 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SRMessageKit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		97BC240422743C6500024FDE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -348,19 +433,24 @@
 				97BC24322274B08100024FDE /* SRCellSizeCalculator.m in Sources */,
 				7226992722758D290047C80B /* SRDetectorType.m in Sources */,
 				97BC242C2274855E00024FDE /* SRLabelAlignment.m in Sources */,
+				722699372276C8460047C80B /* SRMessageKind.m in Sources */,
 				97BC24352274B3F400024FDE /* SRMessageSizeCalculator.m in Sources */,
 				722698FB2275377D0047C80B /* SRMessageKitDateFormatter.m in Sources */,
 				72269918227552230047C80B /* SRAvatar.m in Sources */,
+				7226993D2276DC440047C80B /* SRTextMessageSizeCalculator.m in Sources */,
 				97BC243D2274BA0C00024FDE /* SRMessagesViewController.m in Sources */,
 				97BC242322743C9100024FDE /* SRMessagesCollectionViewFlowLayout.m in Sources */,
 				97BC24492274BA8E00024FDE /* NSAttributedString+SRExtensions.m in Sources */,
 				72269904227544CF0047C80B /* SRMessageType.m in Sources */,
+				7226993A2276CAA10047C80B /* SRTextMessageCell.m in Sources */,
 				7226990A2275463D0047C80B /* SRLocationItem.m in Sources */,
+				722699402276EB2E0047C80B /* SRMediaMessageSizeCalculator.m in Sources */,
 				97BC24432274BA4800024FDE /* SRMessagesViewController+Menu.m in Sources */,
 				722699152275472A0047C80B /* SRAvatarView.m in Sources */,
 				97BC24462274BA7200024FDE /* NSBundle+SRExtensions.m in Sources */,
 				7226992B227595590047C80B /* NSArray+SRExtensions.m in Sources */,
 				97BC24402274BA3800024FDE /* SRMessagesViewController+Keyboard.m in Sources */,
+				7226993422769DD60047C80B /* SRMediaMessageCell.m in Sources */,
 				97BC241B22743C6700024FDE /* main.m in Sources */,
 				97BC242622743E8500024FDE /* SRMessagesCollectionViewLayoutAttributes.m in Sources */,
 				97BC242F227487D200024FDE /* SRHorizontalEdgeInsets.m in Sources */,
@@ -370,6 +460,8 @@
 				97BC2429227481E400024FDE /* SRAvatarPosition.m in Sources */,
 				97BC244C2274BAA900024FDE /* UIColor+SRExtensions.m in Sources */,
 				7226992422758BC10047C80B /* SRMessageLabel.m in Sources */,
+				722699312276932F0047C80B /* SRMessageReusableView.m in Sources */,
+				7226992E22768E840047C80B /* SRMessagesCollectionView.m in Sources */,
 				97BC240D22743C6500024FDE /* AppDelegate.m in Sources */,
 				7226991B227553E80047C80B /* SRInsetLabel.m in Sources */,
 				72269907227545DF0047C80B /* SRMediaItem.m in Sources */,
@@ -513,10 +605,11 @@
 		};
 		97BC241F22743C6700024FDE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F79CA9C3BD58032F78C30CB /* Pods-SRMessageKit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VN2D9WHJ93;
+				DEVELOPMENT_TEAM = LT8CXM9387;
 				INFOPLIST_FILE = SRMessageKit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -531,10 +624,11 @@
 		};
 		97BC242022743C6700024FDE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE65E7F31ACC9A5CA95127BB /* Pods-SRMessageKit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VN2D9WHJ93;
+				DEVELOPMENT_TEAM = LT8CXM9387;
 				INFOPLIST_FILE = SRMessageKit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (

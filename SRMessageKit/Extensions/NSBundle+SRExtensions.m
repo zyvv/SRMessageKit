@@ -17,7 +17,6 @@
 //    NSAssert(resourceBundleUrl, <#desc, ...#>)
     NSBundle *resourceBundle = [NSBundle bundleWithURL:resourceBundleUrl];
 //    NSAssert(resourceBundle, <#desc, ...#>)
-    UIEdgeInsets
 
     return resourceBundle;
 }

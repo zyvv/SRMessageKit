@@ -18,55 +18,16 @@ typedef enum SRTailCorner: NSUInteger {
     SRTailCornerBottomRight,
 } SRTailCorner;
 
-NSString * tailCornerRawValue(SRTailCorner corner) {
-    switch (corner) {
-        case SRTailCornerBottomRight:
-            return @"bottomRight";
-            break;
-        case SRTailCornerBottomLeft:
-            return @"bottomLeft";
-            break;
-        case SRTailCornerTopLeft:
-            return @"topLeft";
-            break;
-        case SRTailCornerTopRigth:
-            return @"topRight";
-            break;
-    }
-}
+NSString * tailCornerRawValue(SRTailCorner corner);
 
-UIImageOrientation imageOrientation(SRTailCorner corner) {
-    switch (corner) {
-        case SRTailCornerBottomRight:
-            return UIImageOrientationUp;
-            break;
-        case SRTailCornerBottomLeft:
-            return UIImageOrientationUpMirrored;
-            break;
-        case SRTailCornerTopLeft:
-            return UIImageOrientationDown;
-            break;
-        case SRTailCornerTopRigth:
-            return UIImageOrientationDownMirrored;
-            break;
-    }
-}
+UIImageOrientation imageOrientation(SRTailCorner corner);
 
 typedef enum SRTailStyle: NSUInteger {
     SRTailStyleCurved,
     SRTailStylePointedEdge,
 } SRTailStyle;
 
-NSString * imageNameSuffix(SRTailStyle style) {
-    switch (style) {
-        case SRTailStyleCurved:
-            return @"_tail_v2";
-            break;
-        case SRTailStylePointedEdge:
-            return @"_tail_v1";
-            break;
-    }
-}
+NSString * imageNameSuffix(SRTailStyle style);
 
 typedef enum SRMessagesStyle: NSUInteger {
     SRMessagesStyleNone,

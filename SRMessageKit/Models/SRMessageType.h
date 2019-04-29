@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "SRSender.h"
+#import "SRMessageKind.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -16,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) SRSender *sender;
 @property (nonatomic, strong) NSString *messageId;
 @property (nonatomic, strong) NSDate *sentDate;
-@property (nonatomic, strong) SRSender *kind;
+@property (nonatomic, strong) SRMessageKind *kind;
 
 @end
 

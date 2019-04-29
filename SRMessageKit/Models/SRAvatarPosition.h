@@ -18,7 +18,7 @@ typedef enum SRAvatarPositionHorizontal: NSUInteger {
 
 typedef enum SRAvatarPositionVertical: NSUInteger {
     SRAvatarPositionHorizontalCellTop,
-    SRAvatarPositionHorizontalCellLabelTop,
+    SRAvatarPositionHorizontalMessageLabelTop,
     SRAvatarPositionHorizontalMessageTop,
     SRAvatarPositionHorizontalMessageCenter,
     SRAvatarPositionHorizontalMessageBottom,

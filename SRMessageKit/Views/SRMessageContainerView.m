@@ -7,6 +7,7 @@
 //
 
 #import "SRMessageContainerView.h"
+#import "SRMessageStyle.h"
 
 @interface SRMessageContainerView ()
 

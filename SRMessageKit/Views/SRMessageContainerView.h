@@ -7,10 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SRMessageStyle.h"
 
 NS_ASSUME_NONNULL_BEGIN
-
+@class SRMessageStyle;
 @interface SRMessageContainerView : UIImageView
 
 @property (nonatomic, strong) SRMessageStyle *style;

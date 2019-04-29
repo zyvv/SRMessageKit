@@ -11,34 +11,14 @@
 NS_ASSUME_NONNULL_BEGIN
 
 typedef enum SRDetectorType: NSUInteger {
-    DetectorTypeAddress,
-    DetectorTypeDate,
-    DetectorTypePhoneNumber,
-    DetectorTypeUrl,
-    DetectorTypeTransitInformation,
+    SRDetectorTypeAddress,
+    SRDetectorTypeDate,
+    SRDetectorTypePhoneNumber,
+    SRDetectorTypeUrl,
+    SRDetectorTypeTransitInformation,
 } SRDetectorType;
 
-NSTextCheckingType textCheckingType(SRDetectorType type) {
-    switch (type) {
-        case DetectorTypeAddress:
-            return NSTextCheckingTypeAddress;
-            break;
-        case DetectorTypeDate:
-            return NSTextCheckingTypeDate;
-            break;
-        case DetectorTypePhoneNumber:
-            return NSTextCheckingTypePhoneNumber;
-            break;
-        case DetectorTypeUrl:
-            return NSTextCheckingTypeLink;
-            break;
-        case DetectorTypeTransitInformation:
-            return NSTextCheckingTypeTransitInformation;
-            break;
-        default:
-            break;
-    }
-}
+NSTextCheckingType textCheckingType(SRDetectorType type);
 
 //@interface SRDetectorType : NSObject
 //

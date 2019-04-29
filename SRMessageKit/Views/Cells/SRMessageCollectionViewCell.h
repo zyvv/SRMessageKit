@@ -9,6 +9,22 @@
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
+@class SRMessageCollectionViewCell;
+@protocol SRMessageCellDelegate <NSObject>
+
+- (void)didTapMessageInCell:(SRMessageCollectionViewCell *)cell;
+
+- (void)didTapAvatarInCell:(SRMessageCollectionViewCell *)cell;
+
+- (void)didTapCellTopLabelInCell:(SRMessageCollectionViewCell *)cell;
+
+- (void)didTapMessageTopLabelInCell:(SRMessageCollectionViewCell *)cell;
+
+- (void)didTapMessageBottomLabelInCell:(SRMessageCollectionViewCell *)cell;
+
+- (void)didTapAccessoryViewInCell:(SRMessageCollectionViewCell *)cell;
+
+@end
 
 @interface SRMessageCollectionViewCell : UICollectionViewCell
 

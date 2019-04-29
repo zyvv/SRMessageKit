@@ -33,7 +33,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign) UIEdgeInsets textInsets;
 
+@property (nonatomic, strong) UIFont *messageLabelFont;
+
 + (NSDictionary *)defaultAttributes;
+
+- (void)configure:(void(^)(void))block;
 
 
 @end
