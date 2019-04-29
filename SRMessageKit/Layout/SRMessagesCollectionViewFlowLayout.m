@@ -117,8 +117,145 @@
     return _emojiMessageSizeCalculator;
 }
 
+- (SRMediaMessageSizeCalculator *)photoMessageSizeCalculator {
+    if (!_photoMessageSizeCalculator) {
+        _photoMessageSizeCalculator = [[SRMediaMessageSizeCalculator alloc] initWithLayout:self];
+    }
+    return _photoMessageSizeCalculator;
+}
+
+- (SRMediaMessageSizeCalculator *)videoMessageSizeCalculator {
+    if (!_videoMessageSizeCalculator) {
+        _videoMessageSizeCalculator = [[SRMediaMessageSizeCalculator alloc] initWithLayout:self];
+    }
+    return _videoMessageSizeCalculator;
+}
+
 - (SRCellSizeCalculator *)cellSizeCalculatorForItemAtIndexPath:(NSIndexPath *)indexPath {
+    SRMessageType *message = [self.messagesDataSource messageForItemAtIndexPath:indexPath inMessagesCollectionView:self.messagesCollectionView];
+    switch (message.kind.kind) {
+        case SRMessagesKindText:
+            return self.textMessageSizeCalculator;
+            break;
+        case SRMessagesKindAttributedText:
+            return self.attributedTextMessageSizeCalculator;
+            break;
+        case SRMessagesKindEmoji:
+            return self.emojiMessageSizeCalculator;
+            break;
+        case SRMessagesKindCustom:
+            return [self.messagesLayoutDelegate customCellSizeCalculator:message atIndexPath:indexPath inMessageCollectionView:self.messagesCollectionView];
+            break;
+            
+        default:
+            break;
+    }
     return nil;
+}
+
+- (CGSize)sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    SRCellSizeCalculator *calculator = [self cellSizeCalculatorForItemAtIndexPath:indexPath];
+    return [calculator sizeForItemAtIndexPath:indexPath];
+}
+
+- (void)setMessageIncomingAvatarSize:(CGSize)newSize {
+    for (SRMessageSizeCalculator *calculator in [self messageSizeCalculators] ) {
+        calculator.incomingAvatarSize = newSize;
+    }
+}
+
+- (void)setMessageOutgoingAvatarSize:(CGSize)newSize {
+    for (SRMessageSizeCalculator *calculator in [self messageSizeCalculators] ) {
+        calculator.outgoingAvatarSize = newSize;
+    }
+}
+
+- (void)setMessageIncomingAvatarPosition:(SRAvatarPosition *)newPosition {
+    for (SRMessageSizeCalculator *calculator in [self messageSizeCalculators] ) {
+        calculator.incomingAvatarPosition = newPosition;
+    }
+}
+
+- (void)setMessageOutgoingAvatarPosition:(SRAvatarPosition *)newPosition {
+    for (SRMessageSizeCalculator *calculator in [self messageSizeCalculators] ) {
+        calculator.outgoingAvatarPosition = newPosition;
+    }
+}
+
+- (void)setMessageIncomingMessagePadding:(UIEdgeInsets)newPadding {
+    for (SRMessageSizeCalculator *calculator in [self messageSizeCalculators] ) {
+        calculator.incomingMessagePadding = newPadding;
+    }
+}
+
+- (void)setMessageOutgoingMessagePadding:(UIEdgeInsets)newPadding {
+    for (SRMessageSizeCalculator *calculator in [self messageSizeCalculators] ) {
+        calculator.outgoingMessagePadding = newPadding;
+    }
+}
+
+- (void)setMessageIncomingCellTopLabelAlignment:(SRLabelAlignment *)newAlignment {
+    for (SRMessageSizeCalculator *calculator in [self messageSizeCalculators] ) {
+        calculator.incomingCellTopLabelAlignment = newAlignment;
+    }
+}
+
+- (void)setMessageOutgoingCellTopLabelAlignment:(SRLabelAlignment *)newAlignment {
+    for (SRMessageSizeCalculator *calculator in [self messageSizeCalculators] ) {
+        calculator.outgoingCellTopLabelAlignment = newAlignment;
+    }
+}
+
+- (void)setMessageIncomingMessageTopLabelAlignment:(SRLabelAlignment *)newAlignment {
+    for (SRMessageSizeCalculator *calculator in [self messageSizeCalculators] ) {
+        calculator.incomingMessageTopLabelAlignment = newAlignment;
+    }
+}
+
+- (void)setMessageOutgoingMessageTopLabelAlignment:(SRLabelAlignment *)newAlignment {
+    for (SRMessageSizeCalculator *calculator in [self messageSizeCalculators] ) {
+        calculator.outgoingMessageTopLabelAlignment = newAlignment;
+    }
+}
+
+- (void)setMessageIncomingMessageBottomLabelAlignment:(SRLabelAlignment *)newAlignment {
+    for (SRMessageSizeCalculator *calculator in [self messageSizeCalculators] ) {
+        calculator.incomingMessageBottomLabelAlignment = newAlignment;
+    }
+}
+
+- (void)setMessageOutgoingMessageBottomLabelAlignment:(SRLabelAlignment *)newAlignment {
+    for (SRMessageSizeCalculator *calculator in [self messageSizeCalculators] ) {
+        calculator.outgoingMessageBottomLabelAlignment = newAlignment;
+    }
+}
+
+- (void)setMessageIncomingAccessoryViewSize:(CGSize)newSize {
+    for (SRMessageSizeCalculator *calculator in [self messageSizeCalculators] ) {
+        calculator.incomingAccessoryViewSize = newSize;
+    }
+}
+
+- (void)setMessageOutgoingAccessoryViewSize:(CGSize)newSize {
+    for (SRMessageSizeCalculator *calculator in [self messageSizeCalculators] ) {
+        calculator.outgoingAccessoryViewSize = newSize;
+    }
+}
+
+- (void)setMessageIncomingAccessoryViewPadding:(SRHorizontalEdgeInsets *)newPadding {
+    for (SRMessageSizeCalculator *calculator in [self messageSizeCalculators] ) {
+        calculator.incomingAccessoryViewPadding = newPadding;
+    }
+}
+
+- (void)setMessageOutgoingAccessoryViewPadding:(SRHorizontalEdgeInsets *)newPadding {
+    for (SRMessageSizeCalculator *calculator in [self messageSizeCalculators] ) {
+        calculator.outgoingAccessoryViewPadding = newPadding;
+    }
+}
+
+- (NSArray *)messageSizeCalculators {
+    return @[self.textMessageSizeCalculator, self.attributedTextMessageSizeCalculator, self.emojiMessageSizeCalculator, self.photoMessageSizeCalculator, self.videoMessageSizeCalculator];
 }
 
 @end

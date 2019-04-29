@@ -29,6 +29,7 @@
 		7226993A2276CAA10047C80B /* SRTextMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 722699392276CAA10047C80B /* SRTextMessageCell.m */; };
 		7226993D2276DC440047C80B /* SRTextMessageSizeCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7226993C2276DC440047C80B /* SRTextMessageSizeCalculator.m */; };
 		722699402276EB2E0047C80B /* SRMediaMessageSizeCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7226993F2276EB2E0047C80B /* SRMediaMessageSizeCalculator.m */; };
+		722699442276FCC80047C80B /* SRMessageInputBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 722699432276FCC80047C80B /* SRMessageInputBar.m */; };
 		97BC240D22743C6500024FDE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 97BC240C22743C6500024FDE /* AppDelegate.m */; };
 		97BC241022743C6500024FDE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97BC240F22743C6500024FDE /* ViewController.m */; };
 		97BC241322743C6500024FDE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97BC241122743C6500024FDE /* Main.storyboard */; };
@@ -98,6 +99,8 @@
 		7226993C2276DC440047C80B /* SRTextMessageSizeCalculator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SRTextMessageSizeCalculator.m; sourceTree = "<group>"; };
 		7226993E2276EB2E0047C80B /* SRMediaMessageSizeCalculator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRMediaMessageSizeCalculator.h; sourceTree = "<group>"; };
 		7226993F2276EB2E0047C80B /* SRMediaMessageSizeCalculator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SRMediaMessageSizeCalculator.m; sourceTree = "<group>"; };
+		722699422276FCC80047C80B /* SRMessageInputBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRMessageInputBar.h; sourceTree = "<group>"; };
+		722699432276FCC80047C80B /* SRMessageInputBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SRMessageInputBar.m; sourceTree = "<group>"; };
 		7F79CA9C3BD58032F78C30CB /* Pods-SRMessageKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SRMessageKit.debug.xcconfig"; path = "Target Support Files/Pods-SRMessageKit/Pods-SRMessageKit.debug.xcconfig"; sourceTree = "<group>"; };
 		97BC240822743C6500024FDE /* SRMessageKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SRMessageKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97BC240B22743C6500024FDE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -187,6 +190,15 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		722699412276FCA00047C80B /* InputBar */ = {
+			isa = PBXGroup;
+			children = (
+				722699422276FCC80047C80B /* SRMessageInputBar.h */,
+				722699432276FCC80047C80B /* SRMessageInputBar.m */,
+			);
+			path = InputBar;
+			sourceTree = "<group>";
+		};
 		730B7690D0CF0F0E77AB33A6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,6 +237,7 @@
 		97BC240A22743C6500024FDE /* SRMessageKit */ = {
 			isa = PBXGroup;
 			children = (
+				722699412276FCA00047C80B /* InputBar */,
 				7226990B227546AD0047C80B /* Views */,
 				97BC24392274B99A00024FDE /* Controllers */,
 				97BC24382274B99200024FDE /* Extensions */,
@@ -456,6 +469,7 @@
 				97BC242F227487D200024FDE /* SRHorizontalEdgeInsets.m in Sources */,
 				7226990F227546CF0047C80B /* SRMessageCollectionViewCell.m in Sources */,
 				7226990122753F490047C80B /* SRSender.m in Sources */,
+				722699442276FCC80047C80B /* SRMessageInputBar.m in Sources */,
 				72269912227546FD0047C80B /* SRMessageContentCell.m in Sources */,
 				97BC2429227481E400024FDE /* SRAvatarPosition.m in Sources */,
 				97BC244C2274BAA900024FDE /* UIColor+SRExtensions.m in Sources */,
