@@ -128,7 +128,7 @@
     NSLayoutConstraint *right = [self.placeholderLabel.rightAnchor constraintEqualToAnchor:self.rightAnchor constant:-self.placeholderLabelInsets.right];
     NSLayoutConstraint *centerX = [self.placeholderLabel.centerXAnchor constraintEqualToAnchor:self.centerXAnchor];
     NSLayoutConstraint *centerY = [self.placeholderLabel.centerYAnchor constraintEqualToAnchor:self.centerYAnchor];
-    self.placeholderLabelInsets = [[NSLayoutConstraintSet alloc] initWithTop:top bottom:bottom left:left right:right centerX:centerX centerY:centerY width:nil height:nil];
+    self.placeholderLabelConstraintSet = [[NSLayoutConstraintSet alloc] initWithTop:top bottom:bottom left:left right:right centerX:centerX centerY:centerY width:nil height:nil];
     self.placeholderLabelConstraintSet.sr_centerX.priority = UILayoutPriorityDefaultLow;
     self.placeholderLabelConstraintSet.sr_centerY.priority = UILayoutPriorityDefaultLow;
     [self.placeholderLabelConstraintSet acctivate];

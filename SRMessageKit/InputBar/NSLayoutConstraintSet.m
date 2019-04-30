@@ -16,14 +16,14 @@
 
 @implementation NSLayoutConstraintSet
 
-- (instancetype)initWithTop:(NSLayoutConstraint *)top
-                     bottom:(NSLayoutConstraint *)bottom
-                       left:(NSLayoutConstraint *)left
-                      right:(NSLayoutConstraint *)right
-                    centerX:(NSLayoutConstraint *)centerX
-                    centerY:(NSLayoutConstraint *)centerY
-                      width:(NSLayoutConstraint *)width
-                     height:(NSLayoutConstraint *)height {
+- (instancetype)initWithTop:(NSLayoutConstraint *_Nullable)top
+                     bottom:(NSLayoutConstraint *_Nullable)bottom
+                       left:(NSLayoutConstraint *_Nullable)left
+                      right:(NSLayoutConstraint *_Nullable)right
+                    centerX:(NSLayoutConstraint *_Nullable)centerX
+                    centerY:(NSLayoutConstraint *_Nullable)centerY
+                      width:(NSLayoutConstraint *_Nullable)width
+                     height:(NSLayoutConstraint *_Nullable)height {
     self = [super init];
     if (self) {
         self.sr_top = top;
