@@ -138,4 +138,44 @@
     
 }
 
+- (void)updateConstraintsForPlaceholderLabel {
+    self.placeholderLabelConstraintSet.sr_top.constant = self.placeholderLabelInsets.top;
+    self.placeholderLabelConstraintSet.sr_bottom.constant = -self.placeholderLabelInsets.bottom;
+    self.placeholderLabelConstraintSet.sr_left.constant = self.placeholderLabelInsets.left;
+    self.placeholderLabelConstraintSet.sr_right.constant = -self.placeholderLabelInsets.right;
+}
+
+#pragma mark - Notification
+- (void)postTextViewDidChangeNotification {
+    [[NSNotificationCenter defaultCenter] postNotificationName:UITextViewTextDidChangeNotification object:self];
+}
+
+- (void)textViewTextDidChange {
+    self.placeholderLabel.hidden = self.text.length == 0 ? NO : YES;
+}
+
+#pragma mark - Image Paste Support
+- (BOOL)canPerformAction:(SEL)action withSender:(id)sender {
+    if (action == @selector(paste:) && [UIPasteboard generalPasteboard].image != nil) {
+        return self.isImagePasteEnabled;
+    }
+    return [super canPerformAction:action withSender:sender];
+}
+
+- (void)paste:(id)sender {
+    UIImage *image = [UIPasteboard generalPasteboard].image;
+    if (!image) {
+        return [super paste:sender];
+    }
+    if (self.isImagePasteEnabled) {
+        [self pasteImageInTextContainerWithImage:image];
+    } else {
+        
+    }
+}
+
+- (void)pasteImageInTextContainerWithImage:(UIImage *)image {
+    NSAttributedString *attributedImageString = [NSAttributedString attributedStringWithAttachment:<#(nonnull NSTextAttachment *)#>]
+}
+
 @end
