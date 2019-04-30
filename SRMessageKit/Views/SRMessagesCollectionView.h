@@ -79,6 +79,11 @@
 
 @end
 
+static NSString *reuseViewID = @"SRMessageReusableView";
+static NSString *textCellID = @"SRTextMessageCell";
+static NSString *mediaCellID = @"SRMediaMessageCell";
+
+
 @interface SRMessagesCollectionView : UICollectionView
 
 @property (nonatomic, weak) id<SRMessagesDataSource> messageDataSource;
@@ -86,7 +91,7 @@
 @property (nonatomic, weak) id<SRMessagesLayoutDelegate> messageLayoutDelegate;
 @property (nonatomic, weak) id<SRMessageCellDelegate> messageCellDelegate;
 
-@property (nonatomic, copy) NSString *temp;
++ (instancetype)messagesCollectionView;
 
 - (void)scrollToBottom:(BOOL)animated;
 

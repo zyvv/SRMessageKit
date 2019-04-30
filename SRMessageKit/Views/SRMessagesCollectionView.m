@@ -10,6 +10,7 @@
 #import "SRMessageContentCell.h"
 #import "SRTextMessageCell.h"
 #import "SRMediaMessageCell.h"
+#import "SRMessagesCollectionViewFlowLayout.h"
 
 @interface SRMessagesCollectionView ()
 
@@ -17,11 +18,13 @@
 
 @end
 
-static NSString *reuseViewID = @"SRMessageReusableView";
-static NSString *textCellID = @"SRTextMessageCell";
-static NSString *mediaCellID = @"SRMediaMessageCell";
-
 @implementation SRMessagesCollectionView
+
++ (instancetype)messagesCollectionView {
+    SRMessagesCollectionViewFlowLayout *layout = [[SRMessagesCollectionViewFlowLayout alloc] init];
+    SRMessagesCollectionView *collectionView = [[SRMessagesCollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
+    return collectionView;
+}
 
 - (instancetype)initWithFrame:(CGRect)frame collectionViewLayout:(UICollectionViewLayout *)layout {
     self = [super initWithFrame:frame collectionViewLayout:layout];

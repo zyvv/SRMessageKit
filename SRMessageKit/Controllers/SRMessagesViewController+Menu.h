@@ -12,6 +12,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SRMessagesViewController (Menu)
 
+// MARK: - Register / Unregister Observers
+
+- (void)addMenuControllerObservers;
+
+- (void)removeMenuControllerObservers;
+
+// MARK: - Notification Handlers
+- (void)menuControllerWillShow:(NSNotification *)notification;
+
+
 @end
 
 NS_ASSUME_NONNULL_END

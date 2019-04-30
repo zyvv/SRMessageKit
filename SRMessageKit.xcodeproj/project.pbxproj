@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7204A8E42277FA6D00C6C2BB /* SRInputStackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7204A8E32277FA6D00C6C2BB /* SRInputStackView.m */; };
+		7204A8E72278102300C6C2BB /* SRInputBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7204A8E62278102300C6C2BB /* SRInputBarButtonItem.m */; };
+		7204A8EA227825ED00C6C2BB /* SRInputTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7204A8E9227825ED00C6C2BB /* SRInputTextView.m */; };
+		7204A8ED22782A7C00C6C2BB /* NSLayoutConstraintSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 7204A8EC22782A7C00C6C2BB /* NSLayoutConstraintSet.m */; };
 		722698FB2275377D0047C80B /* SRMessageKitDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 722698FA2275377D0047C80B /* SRMessageKitDateFormatter.m */; };
 		722698FE22753B8C0047C80B /* SRMessageStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 722698FD22753B8C0047C80B /* SRMessageStyle.m */; };
 		7226990122753F490047C80B /* SRSender.m in Sources */ = {isa = PBXBuildFile; fileRef = 7226990022753F490047C80B /* SRSender.m */; };
@@ -55,6 +59,14 @@
 
 /* Begin PBXFileReference section */
 		0922B5E22ABED8FEEEDF84BF /* libPods-SRMessageKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SRMessageKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7204A8E22277FA6D00C6C2BB /* SRInputStackView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRInputStackView.h; sourceTree = "<group>"; };
+		7204A8E32277FA6D00C6C2BB /* SRInputStackView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SRInputStackView.m; sourceTree = "<group>"; };
+		7204A8E52278102300C6C2BB /* SRInputBarButtonItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRInputBarButtonItem.h; sourceTree = "<group>"; };
+		7204A8E62278102300C6C2BB /* SRInputBarButtonItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SRInputBarButtonItem.m; sourceTree = "<group>"; };
+		7204A8E8227825ED00C6C2BB /* SRInputTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRInputTextView.h; sourceTree = "<group>"; };
+		7204A8E9227825ED00C6C2BB /* SRInputTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SRInputTextView.m; sourceTree = "<group>"; };
+		7204A8EB22782A7C00C6C2BB /* NSLayoutConstraintSet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSLayoutConstraintSet.h; sourceTree = "<group>"; };
+		7204A8EC22782A7C00C6C2BB /* NSLayoutConstraintSet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSLayoutConstraintSet.m; sourceTree = "<group>"; };
 		722698F92275377D0047C80B /* SRMessageKitDateFormatter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRMessageKitDateFormatter.h; sourceTree = "<group>"; };
 		722698FA2275377D0047C80B /* SRMessageKitDateFormatter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SRMessageKitDateFormatter.m; sourceTree = "<group>"; };
 		722698FC22753B8C0047C80B /* SRMessageStyle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRMessageStyle.h; sourceTree = "<group>"; };
@@ -195,6 +207,14 @@
 			children = (
 				722699422276FCC80047C80B /* SRMessageInputBar.h */,
 				722699432276FCC80047C80B /* SRMessageInputBar.m */,
+				7204A8E22277FA6D00C6C2BB /* SRInputStackView.h */,
+				7204A8E32277FA6D00C6C2BB /* SRInputStackView.m */,
+				7204A8E52278102300C6C2BB /* SRInputBarButtonItem.h */,
+				7204A8E62278102300C6C2BB /* SRInputBarButtonItem.m */,
+				7204A8E8227825ED00C6C2BB /* SRInputTextView.h */,
+				7204A8E9227825ED00C6C2BB /* SRInputTextView.m */,
+				7204A8EB22782A7C00C6C2BB /* NSLayoutConstraintSet.h */,
+				7204A8EC22782A7C00C6C2BB /* NSLayoutConstraintSet.m */,
 			);
 			path = InputBar;
 			sourceTree = "<group>";
@@ -448,7 +468,9 @@
 				97BC242C2274855E00024FDE /* SRLabelAlignment.m in Sources */,
 				722699372276C8460047C80B /* SRMessageKind.m in Sources */,
 				97BC24352274B3F400024FDE /* SRMessageSizeCalculator.m in Sources */,
+				7204A8E72278102300C6C2BB /* SRInputBarButtonItem.m in Sources */,
 				722698FB2275377D0047C80B /* SRMessageKitDateFormatter.m in Sources */,
+				7204A8ED22782A7C00C6C2BB /* NSLayoutConstraintSet.m in Sources */,
 				72269918227552230047C80B /* SRAvatar.m in Sources */,
 				7226993D2276DC440047C80B /* SRTextMessageSizeCalculator.m in Sources */,
 				97BC243D2274BA0C00024FDE /* SRMessagesViewController.m in Sources */,
@@ -471,8 +493,10 @@
 				7226990122753F490047C80B /* SRSender.m in Sources */,
 				722699442276FCC80047C80B /* SRMessageInputBar.m in Sources */,
 				72269912227546FD0047C80B /* SRMessageContentCell.m in Sources */,
+				7204A8E42277FA6D00C6C2BB /* SRInputStackView.m in Sources */,
 				97BC2429227481E400024FDE /* SRAvatarPosition.m in Sources */,
 				97BC244C2274BAA900024FDE /* UIColor+SRExtensions.m in Sources */,
+				7204A8EA227825ED00C6C2BB /* SRInputTextView.m in Sources */,
 				7226992422758BC10047C80B /* SRMessageLabel.m in Sources */,
 				722699312276932F0047C80B /* SRMessageReusableView.m in Sources */,
 				7226992E22768E840047C80B /* SRMessagesCollectionView.m in Sources */,

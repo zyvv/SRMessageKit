@@ -22,6 +22,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign) BOOL maintainPositionOnKeyboardFrameChanged;
 
+@property (nonatomic, assign) CGFloat additionalBottomInset;
+
+@property (nonatomic, assign) CGFloat messageCollectionViewBottomInset;
+
+@property (nonatomic, strong) NSIndexPath *selectedIndexPathForMenu;
+
+@property (nonatomic, assign) BOOL isMessagesControllerBeingDismissed;
+
+
 @end
 
 NS_ASSUME_NONNULL_END
