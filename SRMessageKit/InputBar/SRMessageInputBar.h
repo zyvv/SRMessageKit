@@ -7,8 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SRInputStackView.h"
+#import "SRInputTextView.h"
+#import "SRInputBarButtonItem.h"
 
 NS_ASSUME_NONNULL_BEGIN
+
+@protocol SRInputPluginDelegate <NSObject>
+
+- (void)reloadData;
+
+- (void)invalidate;
+
+- (BOOL)handleInputOfObject:(id)object;
+
+@end
 
 @class SRMessageInputBar;
 @protocol SRMessageInputBarDelegate <NSObject>
@@ -24,6 +37,70 @@ NS_ASSUME_NONNULL_BEGIN
 @interface SRMessageInputBar : UIView
 
 @property (nonatomic, weak) id<SRMessageInputBarDelegate> delegate;
+
+@property (nonatomic, strong) UIView *backgroundView;
+
+@property (nonatomic, strong, readonly) UIView *contentView;
+
+@property (nonatomic, strong) UIView *blurView;
+
+@property (nonatomic, assign) BOOL translucent;
+
+@property (nonatomic, strong) UIView *separatorLine;
+
+@property (nonatomic, strong) SRInputStackView *topStackView;
+
+@property (nonatomic, strong) SRInputStackView *leftStackView;
+
+@property (nonatomic, strong) SRInputStackView *rightStackView;
+
+@property (nonatomic, strong) SRInputStackView *bottomStackView;
+
+@property (nonatomic, strong) SRInputTextView *inputTextView;
+
+@property (nonatomic, strong) SRInputBarButtonItem *sendButton;
+
+@property (nonatomic, assign) UIEdgeInsets padding;
+
+@property (nonatomic, assign) UIEdgeInsets topSatckViewPadding;
+
+@property (nonatomic, assign) UIEdgeInsets textViewPadding;
+
+//@property (nonatomic, assign) CGSize intrinsicContentSize;
+
+@property (nonatomic, assign, readonly) CGSize previousIntrinsicContentSize;
+
+@property (nonatomic, assign, readonly) BOOL isOverMaxTextViewHeight;
+
+@property (nonatomic, assign, readonly) BOOL shouldForceTextViewMaxHeight;
+
+@property (nonatomic, assign) BOOL shouldAutoUpdateMaxTextViewHeight;
+
+@property (nonatomic, assign) CGFloat maxTextViewHeight;
+
+@property (nonatomic, assign) BOOL shouldManageSendButtonEnabledState;
+
+@property (nonatomic, assign) CGFloat requiredInputTextViewHeight;
+
+@property (nonatomic, assign, readonly) CGFloat leftStackViewWidthConstant;
+
+@property (nonatomic, assign, readonly) CGFloat rightStackViewWidthConstant;
+
+@property (nonatomic, strong) NSArray *plugins;
+
+@property (nonatomic, strong, readonly) NSArray *leftStackViewItems;
+
+@property (nonatomic, strong, readonly) NSArray *rightStackViewItems;
+
+@property (nonatomic, strong, readonly) NSArray *bottomStackViewItems;
+
+@property (nonatomic, strong, readonly) NSArray *topStackViewItems;
+
+@property (nonatomic, strong) NSArray *nonStackViewItems;
+
+@property (nonatomic, strong) NSArray *items;
+
+- (instancetype)messageInputBar;
 
 @end
 
