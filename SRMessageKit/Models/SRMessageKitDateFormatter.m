@@ -25,7 +25,7 @@
     return [self.formatter stringFromDate:date];
 }
 
-- (NSAttributedString *)attributedStringFromDate:(NSDate *)date withAttributes:(NSArray *)attributes {
+- (NSAttributedString *)attributedStringFromDate:(NSDate *)date withAttributes:(NSDictionary *)attributes {
     NSString *dateString = [self stringFromDate:date];
     return [[NSAttributedString alloc] initWithString:dateString attributes:attributes];
 }

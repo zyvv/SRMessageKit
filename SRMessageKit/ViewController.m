@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "SRChatViewController.h"
 
 @interface ViewController ()
 
@@ -19,5 +20,9 @@
     // Do any additional setup after loading the view.
 }
 
+- (IBAction)btnAction:(id)sender {
+    SRChatViewController *vc = [[SRChatViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 @end

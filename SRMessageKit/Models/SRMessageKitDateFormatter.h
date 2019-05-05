@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (NSString *)stringFromDate:(NSDate *)date;
 
-- (NSAttributedString *)attributedStringFromDate:(NSDate *)date withAttributes:(NSArray *)attributes;
+- (NSAttributedString *)attributedStringFromDate:(NSDate *)date withAttributes:(NSDictionary *)attributes;
 
 - (void)configureDateFormatterForDate:(NSDate *)date;
 

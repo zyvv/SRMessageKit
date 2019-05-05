@@ -15,15 +15,16 @@
 
 @implementation SRInputTextView
 @synthesize placeholder = _placeholder;
+@synthesize placeholderLabelInsets = _placeholderLabelInsets;
 
 - (void)setText:(NSString *)text {
     [super setText:text];
-    
+    [self postTextViewDidChangeNotification];
 }
 
 - (void)setAttributedText:(NSAttributedString *)attributedText {
     [super setAttributedText:attributedText];
-    
+    [self postTextViewDidChangeNotification];
 }
 
 - (NSArray *)images {
@@ -63,9 +64,16 @@
     self.placeholderLabel.textColor = _placeholderTextColor;
 }
 
+- (UIEdgeInsets)placeholderLabelInsets {
+    if (UIEdgeInsetsEqualToEdgeInsets(UIEdgeInsetsZero, _placeholderLabelInsets)) {
+        return UIEdgeInsetsMake(8, 4, 8, 4);
+    }
+    return _placeholderLabelInsets;
+}
+
 - (void)setPlaceholderLabelInsets:(UIEdgeInsets)placeholderLabelInsets {
     _placeholderLabelInsets = placeholderLabelInsets;
-    
+    [self updateConstraintsForPlaceholderLabel];
 }
 
 - (void)setFont:(UIFont *)font {
@@ -135,7 +143,8 @@
 }
 
 - (void)setupObservers {
-    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(redrawTextAttachments) name:UIDeviceOrientationDidChangeNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textViewTextDidChange) name:UITextViewTextDidChangeNotification object:nil];
 }
 
 - (void)updateConstraintsForPlaceholderLabel {
@@ -175,7 +184,124 @@
 }
 
 - (void)pasteImageInTextContainerWithImage:(UIImage *)image {
-    NSAttributedString *attributedImageString = [NSAttributedString attributedStringWithAttachment:<#(nonnull NSTextAttachment *)#>]
+    NSAttributedString *attributedImageString = [NSAttributedString attributedStringWithAttachment:[self textAttachmentUsingImage:image]];
+    BOOL isEmpty = self.attributedText.length == 0;
+    NSMutableAttributedString *newAttributedStingComponent = isEmpty ? [[NSMutableAttributedString alloc] initWithString:@""] : [[NSMutableAttributedString alloc] initWithString:@"\n"];
+    [newAttributedStingComponent appendAttributedString:attributedImageString];
+    
+    [newAttributedStingComponent appendAttributedString:[[NSAttributedString alloc] initWithString:@"\n"]];
+    
+    NSDictionary *attributes = @{NSFontAttributeName : [UIFont preferredFontForTextStyle:UIFontTextStyleBody],
+                                 NSForegroundColorAttributeName: [UIColor blackColor]
+                                 };
+    [newAttributedStingComponent addAttributes:attributes range:NSMakeRange(0, newAttributedStingComponent.length)];
+    [self.textStorage beginEditing];
+    [self.textStorage replaceCharactersInRange:self.selectedRange withAttributedString:newAttributedStingComponent];
+    [self.textStorage endEditing];
+    
+    CGFloat location = self.selectedRange.location + (isEmpty ? 2 : 3);
+    self.selectedRange = NSMakeRange(location, 0);
+    [self postTextViewDidChangeNotification];
 }
+
+- (NSTextAttachment *)textAttachmentUsingImage:(UIImage *)image {
+    CGImageRef cgImage = image.CGImage;
+    if (!cgImage) {
+        return [NSTextAttachment new];
+    }
+    CGFloat scale = image.size.width / (CGRectGetWidth(self.frame) - 2 * (self.textContainerInset.left + self.textContainerInset.right));
+    NSTextAttachment *textAttachment = [NSTextAttachment new];
+    textAttachment.image = [UIImage imageWithCGImage:cgImage scale:scale orientation:UIImageOrientationUp];
+    return textAttachment;
+}
+
+- (NSArray *)parseForAttachedImages {
+    NSMutableArray *images = [NSMutableArray arrayWithCapacity:0];
+    NSRange range = NSMakeRange(0, self.attributedText.length);
+    [self.attributedText enumerateAttribute:NSAttachmentAttributeName inRange:range options:NSAttributedStringEnumerationReverse usingBlock:^(id  _Nullable value, NSRange range, BOOL * _Nonnull stop) {
+        if ([value isKindOfClass:[NSTextAttachment class]]) {
+            NSTextAttachment *attachment = (NSTextAttachment *)value;
+            if (attachment.image) {
+                [images addObject:attachment.image];
+            } else {
+                UIImage *image = [attachment imageForBounds:attachment.bounds textContainer:nil characterIndex:range.location];
+                if (image) {
+                    [images addObject:image];
+                }
+            }
+        }
+    }];
+    return images;
+}
+
+- (NSArray *)parseForComonests {
+    NSMutableArray *components = [NSMutableArray arrayWithCapacity:0];
+    NSMutableArray *attachments = [NSMutableArray arrayWithCapacity:0];
+    NSInteger length = self.attributedText.length;
+    NSRange range = NSMakeRange(0, length);
+    [self.attributedText enumerateAttribute:NSAttachmentAttributeName inRange:range options:NSAttributedStringEnumerationReverse usingBlock:^(id  _Nullable value, NSRange range, BOOL * _Nonnull stop) {
+        if ([value isKindOfClass:[NSTextAttachment class]]) {
+            NSTextAttachment *attachment = (NSTextAttachment *)value;
+            if (attachment.image) {
+                NSDictionary *item = @{@"range": [NSValue valueWithRange:range], @"image":attachment.image};
+                [attachments addObject:item];
+            } else {
+                UIImage *image = [attachment imageForBounds:attachment.bounds textContainer:nil characterIndex:range.location];
+                if (image) {
+                    [attachments addObject:@{@"range": [NSValue valueWithRange:range], @"image":attachment.image}];
+                }
+            }
+            
+        }
+    }];
+    CGFloat curLocation = 0;
+    if (attachments.count == 0) {
+        NSString *text = [self.attributedText.string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        if (text.length > 0) {
+            [components addObject:text];
+        }
+    } else {
+        for (NSDictionary *attachment in attachments) {
+            NSValue *rangeValue = attachment[@"range"];
+            UIImage *image = attachment[@"image"];
+            if (curLocation < rangeValue.rangeValue.location) {
+                NSRange textRange = NSMakeRange(curLocation, rangeValue.rangeValue.location);
+                NSString *text = [[self.attributedText attributedSubstringFromRange:textRange].string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+                if (text.length > 0) {
+                    [components addObject:text];
+                }
+            }
+            curLocation = rangeValue.rangeValue.location + rangeValue.rangeValue.length;
+            [components addObject:image];
+        }
+        if (curLocation < length - 1) {
+            NSString *text = [[self.attributedText attributedSubstringFromRange:NSMakeRange(curLocation, length - curLocation)].string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+            if (text.length > 0) {
+                [components addObject:text];
+            }
+        }
+    }
+    return components;
+}
+
+- (void)redrawTextAttachments {
+    if (self.images.count <= 0) {
+        return;
+    }
+    NSRange range = NSMakeRange(0, self.attributedText.length);
+    [self.attributedText enumerateAttribute:NSAttachmentAttributeName inRange:range options:NSAttributedStringEnumerationReverse usingBlock:^(id  _Nullable value, NSRange range, BOOL * _Nonnull stop) {
+        if ([value isKindOfClass:[NSTextAttachment class]]) {
+            NSTextAttachment *attachment = (NSTextAttachment *)value;
+            if (!attachment.image) {
+                return;
+            }
+            CGFloat newWidth = CGRectGetWidth(self.frame) - 2 * (self.textContainerInset.left + self.textContainerInset.right);
+            CGFloat ratio = attachment.image.size.height / attachment.image.size.width;
+            attachment.bounds = CGRectMake(0, 0, newWidth, ratio * newWidth);
+        }
+    }];
+    [self.layoutManager invalidateLayoutForCharacterRange:range actualCharacterRange:nil];
+}
+
 
 @end

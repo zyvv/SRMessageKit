@@ -7,6 +7,7 @@
 //
 
 #import "SRInputBarButtonItem.h"
+#import "SRMessageInputBar.h"
 
 @interface SRInputBarButtonItem ()
 
@@ -97,9 +98,13 @@
 - (void)setEnabled:(BOOL)enabled {
     [super setEnabled:enabled];
     if (self.isEnabled) {
-        self.onEnabledAction(self);
+        if (self.onEnabledAction) {
+            self.onEnabledAction(self);
+        }
     } else {
-        self.onDisabledAction(self);
+        if (self.onDisabledAction) {
+            self.onDisabledAction(self);
+        }
     }
 }
 
@@ -138,7 +143,9 @@
     self.size = size;
     if (animated) {
         SRInputStackViewPosition position = [self parentStackViewPosition];
-//        self.messageInputBar
+        [self.messageInputBar performLayoutAnimated:animated animations:^{
+            [self.messageInputBar layoutStackViewsWithPositions:@[@(position)]];
+        }];
     }
 }
 

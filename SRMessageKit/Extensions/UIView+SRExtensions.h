@@ -12,6 +12,19 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIView (SRExtensions)
 
+- (void)fillSuperView;
+
+- (NSArray *)addConstraints:(NSLayoutYAxisAnchor *_Nullable)top
+                       left:(NSLayoutXAxisAnchor *_Nullable)left
+                     bottom:(NSLayoutYAxisAnchor *_Nullable)bottom
+                      right:(NSLayoutXAxisAnchor *_Nullable)right
+                topConstant:(CGFloat)topConstant
+               leftConstant:(CGFloat)leftConstant
+             bottomConstant:(CGFloat)bottomConstant
+              rightConstant:(CGFloat)rightConstant
+              widthConstant:(CGFloat)widthConstant
+             heightConstant:(CGFloat)heightConstant;
+
 @end
 
 NS_ASSUME_NONNULL_END

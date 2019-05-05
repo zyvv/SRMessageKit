@@ -11,10 +11,19 @@
 @implementation SRInputStackView
 
 - (instancetype)initWithAxis:(UILayoutConstraintAxis)axis spacing:(CGFloat)spacing {
-    self = [super initWithFrame:CGRectZero];
+    self = [self initWithFrame:CGRectZero];
     if (self) {
         self.axis = axis;
         self.spacing = spacing;
+        
+    }
+    return self;
+}
+
+- (instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    if (self) {
+        [self setup];
     }
     return self;
 }

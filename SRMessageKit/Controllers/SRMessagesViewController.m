@@ -30,7 +30,7 @@
 
 - (SRMessageInputBar *)messageInputBar {
     if (!_messageInputBar) {
-        _messageInputBar = [[SRMessageInputBar alloc] init];
+        _messageInputBar = [SRMessageInputBar messageInputBar];
     }
     return _messageInputBar;
 }
@@ -73,6 +73,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+
     [self setupDefaults];
     [self setupSubviews];
     [self setupConstraints];
@@ -85,6 +86,8 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     self.isMessagesControllerBeingDismissed = NO;
+    
+    NSLog(@"==== %@", NSStringFromCGRect(self.inputAccessoryView.frame));
 }
 
 - (void)viewWillDisappear:(BOOL)animated {

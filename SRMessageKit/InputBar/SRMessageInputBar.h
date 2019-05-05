@@ -42,7 +42,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong, readonly) UIView *contentView;
 
-@property (nonatomic, strong) UIView *blurView;
+@property (nonatomic, strong) UIVisualEffectView *blurView;
 
 @property (nonatomic, assign) BOOL translucent;
 
@@ -62,11 +62,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign) UIEdgeInsets padding;
 
-@property (nonatomic, assign) UIEdgeInsets topSatckViewPadding;
+@property (nonatomic, assign) UIEdgeInsets topStackViewPadding;
 
 @property (nonatomic, assign) UIEdgeInsets textViewPadding;
-
-//@property (nonatomic, assign) CGSize intrinsicContentSize;
 
 @property (nonatomic, assign, readonly) CGSize previousIntrinsicContentSize;
 
@@ -100,7 +98,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) NSArray *items;
 
-- (instancetype)messageInputBar;
++ (instancetype)messageInputBar;
+
+- (void)performLayoutAnimated:(BOOL)animated animations:(void(^)(void))animations;
+
+- (void)layoutStackViewsWithPositions:(NSArray *)positions;
 
 @end
 

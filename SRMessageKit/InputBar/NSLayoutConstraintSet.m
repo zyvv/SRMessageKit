@@ -39,14 +39,29 @@
 }
 
 - (NSArray *)availableConstraints {
-    NSArray *constraints = @[self.sr_top, self.sr_bottom, self.sr_left, self.sr_right, self.sr_centerX, self.sr_centerY, self.sr_width, self.sr_height];
-    NSMutableArray *available = [NSMutableArray arrayWithCapacity:0];
-    for (NSLayoutConstraint *constraint in constraints) {
-        if (constraint) {
-            [available addObject:constraint];
-        }
+    NSMutableArray *constraints = [NSMutableArray arrayWithCapacity:0];
+    if (self.sr_top) {
+        [constraints addObject:self.sr_top];
     }
-    return [available copy];
+    if (self.sr_bottom) {
+        [constraints addObject:self.sr_bottom];
+    }
+    if (self.sr_right) {
+        [constraints addObject:self.sr_right];
+    }
+    if (self.sr_centerX) {
+        [constraints addObject:self.sr_centerX];
+    }
+    if (self.sr_centerY) {
+        [constraints addObject:self.sr_centerY];
+    }
+    if (self.sr_width) {
+        [constraints addObject:self.sr_width];
+    }
+    if (self.sr_height) {
+        [constraints addObject:self.sr_height];
+    }
+    return [constraints copy];
 }
 
 - (NSLayoutConstraintSet *)acctivate {

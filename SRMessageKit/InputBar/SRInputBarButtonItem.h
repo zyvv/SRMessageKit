@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "SRInputStackView.h"
+#import "SRInputItem.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -15,25 +16,15 @@ NS_ASSUME_NONNULL_BEGIN
 @class SRInputBarButtonItem;
 typedef void(^SRInputBarButtonItemAction)(SRInputBarButtonItem *);
 
-//@protocol SRInputItemDelegate <NSObject>
-//
-//
-//
-//@end
-
 typedef enum SRSpacing: NSUInteger {
     SRSpacingNone,
     SRSpacingFixed,
     SRSpacingFlexible,
 } SRSpacing;
 
-@interface SRInputBarButtonItem : UIButton
-
-@property (nonatomic, weak) SRMessageInputBar *messageInputBar;
+@interface SRInputBarButtonItem : SRInputItem
 
 @property (nonatomic, assign) CGSize size;
-
-@property (nonatomic, assign) SRInputStackViewPosition parentStackViewPosition;
 
 @property (nonatomic, copy) NSString *title;
 
@@ -43,6 +34,12 @@ typedef enum SRSpacing: NSUInteger {
 @property (nonatomic, assign) CGFloat spacingWidth;
 
 + (instancetype)inputBarButtonItem;
+
+- (SRInputBarButtonItem *)configure:(SRInputBarButtonItemAction)item;
+
+- (void)setSize:(CGSize)size animated:(BOOL)animated;
+
+- (SRInputBarButtonItem *)onTouchUpInside:(SRInputBarButtonItemAction)action;
 
 @end
 

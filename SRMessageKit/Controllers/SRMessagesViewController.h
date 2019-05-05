@@ -26,7 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign) CGFloat messageCollectionViewBottomInset;
 
-@property (nonatomic, strong) NSIndexPath *selectedIndexPathForMenu;
+@property (nonatomic, strong) NSIndexPath *_Nullable selectedIndexPathForMenu;
 
 @property (nonatomic, assign) BOOL isMessagesControllerBeingDismissed;
 
